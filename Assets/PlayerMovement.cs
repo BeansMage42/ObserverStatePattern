@@ -21,11 +21,19 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        transform.position += new Vector3(moveDir * playerSpeed, 0, 0);
+        transform.position += new Vector3(moveDir * playerSpeed * Time.deltaTime, 0, 0);
     }
 
     private void OnPlayerMove(Vector2 dir)
     {
         moveDir = dir.normalized.x;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("on trigger enter");
+        if (collision.gameObject.TryGetComponent(out Enemy enemy))
+        {
+            enemy.SetState(CarStates.Dying);
+        }
     }
 }
