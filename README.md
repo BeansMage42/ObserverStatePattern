@@ -1,5 +1,7 @@
 # ObserverStatePattern
 
+jonah gibson 100910759
+arshiya shahbazpour 100832558
 Observer patter:
 
 the observer pattern works by having th eplayer subscribe to the movement event in the playerINputHandler. the event is invoked by the handler whenever input is recieved. this method works well because it allows you to change how the player reacts to certain inputs depending on the situation in the game or even remove input by unsubscribing. 
