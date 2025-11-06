@@ -47,7 +47,8 @@ public class GameManager : MonoBehaviour
     public void OnEnemyCollide(float speedChange)
     {
         globalSpeed -= speedChange;
-        Mathf.Clamp(globalSpeed,0f, maxSpeed);
+        if(globalSpeed < 0) globalSpeed = 0;
+        Debug.Log(globalSpeed);
         speedChanged = true;
     }
 

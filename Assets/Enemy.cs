@@ -37,11 +37,12 @@ public class Enemy : MonoBehaviour
 
     private void SetDying()
     {
-        
-        currentState = CarStates.Dying;
-        
-        StartCoroutine(SpinningMotion());
+        if (currentState != CarStates.Dying && currentState != CarStates.Dead)
+        {
+            currentState = CarStates.Dying;
 
+            StartCoroutine(SpinningMotion());
+        }
     }
     private IEnumerator DrivingMotion()
     {
@@ -57,6 +58,7 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator SpinningMotion() 
     {
+        
         GameManager.Instance.OnEnemyCollide(10);
         float timer = 0;
         while (timer < 2)
