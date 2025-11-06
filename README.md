@@ -10,3 +10,12 @@ state pattern:
 the enemy has a state machine that tracks if they are alive and changes their motion based on that state.
 
 we are happy with out implimentations because they worked well and within the timeframe. we finished everything. the longest part was spending more time than required on remembering rotations and bitwise. spend more time learning those before next time.
+
+Object Pool:
+List<gameobject> activePool;
+List<gameObject> inactivePool;
+update{
+if(activepool.count < maxToSpawn){
+
+}
+}
