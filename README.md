@@ -42,3 +42,9 @@ move down equal to player speed
 }
 
 Rather than move the player, I move the trees down to create the illusion of movement. This means each tree needs to know what the players speed is, however when the player collides or has reached their maximum possible speed, they should need to update their speed. To fix this I made the players speed a dirty flag. If the players speed has changed, either due to being below their max speed or coliding with the enemy, the trees speed updates. The players speed is static as long as they are at their max speed. This means the trees only update their speed if the player is updating their speed, reducing uneeded calls and operations. 
+
+I am pretty happy with my implimentation this week. If I had more time I would have liked to make a generic pool type that could be instantiated to pool specific objects, allowing me to pool anything in the game. I would ahve used this to pool enemy vehicles and the trees. 
+I didnt really have any difficulties with this implimentation, these are topics Ive used quite extensively. 
+If i were to do anything better enxt time, I would test more often during the process rather than just at the end. This caused me to panic just a little and was uneeded stress. 
+I was able to impliment and docutment everything required in class with time to spare. 
+Additionally I was able to add significantly more features in this period such as the speed system, UI, and collision effects (slow down on hit);
