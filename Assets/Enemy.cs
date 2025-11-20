@@ -58,8 +58,9 @@ public class Enemy : MonoBehaviour
     }
     private IEnumerator SpinningMotion() 
     {
-        
-        GameManager.Instance.OnEnemyCollide(10);
+
+        CommandInvoker.Instance.ExectuteCommand(new SpinOutCommand(10));
+
         float timer = 0;
         while (timer < 2)
         {
