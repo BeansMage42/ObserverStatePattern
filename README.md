@@ -1,5 +1,46 @@
 # ObserverStatePattern
 
+IN CLASS COMMAND PATTERN CHALLENGE DOCUMENTATION
+
+pseudocode:
+asbtract class Basecommand{
+virtual void execute(){}
+}
+
+
+SpinoutCommand: basecommand{
+commands variable
+constructor(command variable data){
+set the command parameters based on the proovided info
+}
+execute(){
+change the players speed
+}
+}
+
+
+commandInvoker{
+List<basecommand> exectuted commands
+singleton in awake
+
+public executeCommand(BaseCommand baseCommand){
+execute base command and add to list
+}
+}
+
+enemy{
+oncolissionenter(){
+commandinvoker.execute((new spinoutcommand))
+}
+}
+
+The command pattern works here by creating commands that affect the players behaviour and sending them to the command invoker to be executed. This disconnect allows for a lot of different functionalities to be implimented reusing code and allows me to create a list of all commands that have been executed for debugging and replays. 
+
+
+
+
+
+
 jonah gibson 100910759
 arshiya shahbazpour 100832558
 Observer patter:
